@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI HTTP Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        🔐 AI HTTP Tester
+    </header>
+
+    <section class="chat">
+        <div class="chat-box" id="chatBox">
+            <div><strong>AI:</strong> Paste a request, then ask me what to test.</div>
+        </div>
+
+        <div class="chat-input">
+            <input id="chatInput" placeholder="Example: test this for path traversal">
+            <button onclick="askAI()">Ask AI</button>
+        </div>
+    </section>
+
+    <main class="main">
+
+        <section class="panel">
+            <h3>📝 Request</h3>
+
+            <textarea id="requestArea">GET /demo/file?name=test.txt&id=123 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+</textarea>
+
+            <label for="payloadSelect">Payloads</label>
+            <select id="payloadSelect"></select>
+
+            <button onclick="sendRequest()">🚀 Send Request</button>
+        </section>
+
+        <section class="panel">
+            <h3>📨 Response</h3>
+
+            <textarea id="responseArea" placeholder="Response will appear here..."></textarea>
+
+            <div class="analysis" id="analysisBox">
+                No analysis yet.
+            </div>
+
+            <button onclick="analyzeResponse()">Analyze Response</button>
+        </section>
+
+    </main>
+
+    <section class="history">
+        <h3>📊 History</h3>
+
+        <table id="historyTable">
+            <tr>
+                <th>#</th>
+                <th>Payload</th>
+                <th>Status</th>
+                <th>Size</th>
+                <th>Verdict</th>
+            </tr>
+        </table>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

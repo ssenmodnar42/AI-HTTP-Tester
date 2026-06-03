@@ -1,0 +1,7 @@
+{
+    "payloads": [
+        "test.txt",
+        "images/logo.png",
+        "profile/avatar.jpg"
+    ]
+}
